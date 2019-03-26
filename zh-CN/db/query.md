@@ -30,7 +30,11 @@ $result = Query::table(User::class)->where('id', 1)->update(['name' => 'name666'
 $result = Query::table(User::class)->where('id', 1)->limit(1)->get()->getResult();
 
 /** join */
-$result = Query::table(User::class, 'u')->leftJoin(UserInfo::class, ['u.id=uinfo.id'], 'uinfo')->where('u.id', 1, '=')->get()->getResult();
+$result = Query::table(User::class, 'u')->leftJoin(UserInfo::class, ['u.id=uinfo.user_id'], 'uinfo')->where('u.id', 1, '=')->get()->getResult();
+
+/** 数组传参 */
+
+
 ```
 
 ## 聚合操作
